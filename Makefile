@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: hzona <hzona@student.21-school.ru>         +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/07 16:12:07 by hzona             #+#    #+#              #
-#    Updated: 2021/10/08 16:07:19 by schung           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 
 HEAD = libft.h
@@ -34,25 +22,22 @@ REMOVE = rm -f
 
 all: $(NAME)
 
-$(NAME):
-	@$(CC) $(SRC)
-	@$(LIB) $(OBJ)
-	@$(RANLIB)
-	@echo "[INFO] Library [$(NAME)] created"
+$(NAME):	@$(CC) $(SRC)
+			@$(LIB) $(OBJ)
+			@$(RANLIB)
+			@echo "[INFO] Library [$(NAME)] created"
 
-bonus:
-	@$(CC) $(SRC_BONUS)
-	@$(LIB) $(OBJ_BONUS)
-	@$(RANLIB)
-	@echo "[INFO] Bonus Library [$(NAME)] created"
+bonus:		@$(CC) $(SRC_BONUS)
+			@$(LIB) $(OBJ_BONUS)
+			@$(RANLIB)
+			@echo "[INFO] Bonus Library [$(NAME)] created"
 
-clean:
-	@$(REMOVE) $(OBJ) $(OBJ_BONUS)
-	@echo "[INFO] Removed objects"
+clean:		@$(REMOVE) $(OBJ) $(OBJ_BONUS)
+			@echo "[INFO] Removed objects"
 
 fclean: clean
-	@$(REMOVE) $(NAME)
-	@echo "[INFO] Library and objects removed "
+			@$(REMOVE) $(NAME)
+			@echo "[INFO] Library and objects removed "
 
 re: fclean all
 
